@@ -1,0 +1,103 @@
+
+npx create-react-app boilerplate
+
+npm install styled-components
+npm install @reduxjs/toolkit react-redux redux-saga
+
+cd boilerplate/src
+    mkdir api components routes redux features utils styles 
+    touch styles/globalstyles.js
+
+    cd components
+    mkdir user-list post-list
+        cd user-list && touch user-list.component.jsx user-list.styles.jsx
+        cd post-list && touch post-list.component.jsx post-list.styles.jsx
+    
+    cd features && mkdir user && cd user && touch userSlice.js userSaga.js
+    cd redux && touch rootReducer.js rootSaga.js store.js
+    cd api 
+        mkdir users posts && touch users/userApi.js && touch posts/postApi.js
+
+cd src && mkdir config && touch config/firebase.js
+mkdir hooks 
+npm install firebase
+
+fonts: https://fonts.google.com/
+
+technologies:
+
+reactjs
+react-router
+materialui, styledjs
+redux toolkit, redux sagas
+=====================================================================================
+global fonts and styling
+material ui components
+
+react router for navigation
+
+redux slices & sagas (asynchronous http requests - firebase crud operations)
+api folder - firebase configuration and crud operations
+
+features 
+    appointments
+        fetchApts, createApt, deleteApt, updateApt
+        Start, Success, Failure
+
+FIRESTORE DOCUMENTATION
+
+colletion and documents CRUD OPERATIONS
+
+api 
+    api.js 
+    barberApi.js
+    customerApi.js 
+    appointmentApi.js 
+
+
+util/
+    firebase.js (central location for CRUD operations that the api folder leverages)
+
+=====================================================================================
+
+
+FOLDER STRUCTURE.......................
+
+public/
+    index.html (include fonts)
+
+assets/
+    images/
+    svg/
+
+api/
+
+components/
+    component/
+        *.component.jsx
+        *.styles.jsx
+
+routes/
+    component/
+        *.component.jsx
+        *.styles.jsx
+
+store/
+
+features/
+    feature/
+        *.slice.js
+        *.saga.js
+
+utils/
+    firebase.js
+
+styles/
+    global.css
+    variables.css   
+    mixins.css
+
+
+ChatGPT for example code and example file structure.................
+
+example code and file structure for react app when you have api directory and also redux toolkit and redux saga?
