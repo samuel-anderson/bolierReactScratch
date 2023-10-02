@@ -4,7 +4,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         margin: 0;
         padding: 20px 40px;
-        font-family: 'Pacifico', cursive;
+        font-family: Arial;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }

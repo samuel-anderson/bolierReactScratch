@@ -1,9 +1,24 @@
 
+
+=====================================================================================
 npx create-react-app boilerplate
 
 npm install styled-components
 npm install @reduxjs/toolkit react-redux redux-saga
+npm install firebase
 
+npm install react-router-dom localforage match-sorter sort-by
+
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
+/>
+=====================================================================================
 cd boilerplate/src
     mkdir api components routes redux features utils styles 
     touch styles/globalstyles.js
