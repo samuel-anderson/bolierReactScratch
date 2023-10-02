@@ -1,51 +1,32 @@
-import UserList from "./components/user-list/user-list.component";
 import { GlobalStyle } from "./styles/globalstyles";
-import Button from "@mui/material/Button";
-import CustomIcon from "./components/custom-icon/custom-icon.component";
-import AddCircleIcon from "@mui/icons-material/AddCircle";
-import DeleteButton from "./components/delete-btn/delete-btn.component";
+
 import Header from "./components/header/header.component";
 import { ThemeProvider } from "@mui/material/styles";
 import generateTheme from "./theme/theme";
-import { Typography } from "@mui/material";
-import { toggleTheme } from "./features/theme/themeSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { Routes, Route } from "react-router-dom";
+import FirstBody from "./routes/body/first.component";
+import SecondBody from "./routes/body/second.component";
+
+import ThirdBody from "./routes/body/third.component";
 
 const App = () => {
-  const dispatch = useDispatch();
-
   const themeMode = useSelector((state) => state.theme.mode);
   const theme = generateTheme(themeMode);
-
-  const clickhandler = () => {
-    dispatch(toggleTheme());
-  };
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      {/* <Header /> */}
-      <div>
-        Test
-        <CustomIcon
-          onClick={() => console.log("Testing")}
-          icon={<AddCircleIcon />}
-        />
-        <DeleteButton />
-      </div>
 
-      <Button variant="contained" onClick={clickhandler}>
-        Click Me!
-      </Button>
-      <Typography
-        variant="h3"
-        color="secondary"
-        onClick={() => console.log("hi")}
-      >
-        {theme.palette.mode} mode
-      </Typography>
-
-      <UserList />
+      <Routes>
+        <Route path="/" element={<Header />}>
+          {/* Index - Determines if the route is an index route. Index routes render into their 
+        parent's Outlet at their parent's URL (like a default child route). */}
+          <Route index element={<FirstBody />} />
+          <Route path="second" element={<SecondBody />} />
+          <Route path="third" element={<ThirdBody />} />
+        </Route>
+      </Routes>
     </ThemeProvider>
   );
 };
